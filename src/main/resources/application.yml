@@ -1,9 +1,10 @@
 spring:
+#  profiles: "local"
   datasource:
     url: jdbc:h2:mem:smart_mining
     driver-class-name: org.h2.Driver
     username: sa
-    password: password
+    password: sa
     platform: h2
   h2:
     console:
@@ -13,3 +14,18 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      topic: truck-data
+      group-id: truck-group1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring.json.trusted.packages: com.kafka.SmartMining.model
+    producer:
+      topic: truck-data
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
