@@ -12,6 +12,7 @@ import java.util.UUID;
 @Builder
 @Entity
 @AllArgsConstructor
+@ToString
 public class TruckData {
     @Id
     @Column
@@ -31,15 +32,5 @@ public class TruckData {
         this.trkId = UUID.randomUUID().toString();
     }
 
-    @Override
-    public String toString() {
-        return "TruckData{" +
-                "trkId='" + trkId + '\'' +
-                ", avgSpeed=" + avgSpeed +
-                ", enginePerformance=" + enginePerformance +
-                ", tyrePressure=" + tyrePressure +
-                ", environmentalCondition='" + environmentalCondition + '\'' +
-                '}';
-    }
 }
 

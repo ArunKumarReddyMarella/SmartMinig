@@ -1,4 +1,4 @@
-package com.kafka.SmartMining.processor;
+package com.kafka.SmartMining.utils;
 
 import com.kafka.SmartMining.model.TruckData;
 import org.springframework.stereotype.Component;

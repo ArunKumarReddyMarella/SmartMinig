@@ -1,5 +1,4 @@
 spring:
-#  profiles: "local"
   datasource:
     url: jdbc:h2:mem:smart_mining
     driver-class-name: org.h2.Driver
